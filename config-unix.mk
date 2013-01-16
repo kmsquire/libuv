@@ -78,7 +78,7 @@ OBJS += src/unix/fsevents.o
 endif
 
 ifeq (Linux,$(uname_S))
-CSTDFLAG += -D_GNU_SOURCE
+CSTDFLAG=-pedantic -Wall -Wextra -Wno-unused-parameter -D_GNU_SOURCE
 LDFLAGS+=-ldl -lrt
 RUNNER_CFLAGS += -D_GNU_SOURCE
 OBJS += src/unix/linux/linux-core.o \
